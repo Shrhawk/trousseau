@@ -1,0 +1,103 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Store",
+    "definitions": {
+        "Store": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "meta": {
+                    "$ref": "#/definitions/Meta"
+                },
+                "config": {
+                    "$ref": "#/definitions/Config"
+                },
+                "sections": {
+                    "$ref": "#/definitions/Sections"
+                }
+            },
+            "required": [
+                "config",
+                "meta",
+                "sections"
+            ],
+            "title": "Store"
+        },
+        "Config": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "annotations": {
+                    "$ref": "#/definitions/Annotations"
+                }
+            },
+            "required": [
+                "annotations",
+                "description"
+            ],
+            "title": "Config"
+        },
+        "Annotations": {
+            "type": "object",
+            "title": "Annotations"
+        },
+        "Meta": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "created_at": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "created_at",
+                "updated_at"
+            ],
+            "title": "Meta"
+        },
+        "Sections": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "items": {
+                    "$ref": "#/definitions/Items"
+                },
+                "sections": {
+                    "$ref": "#/definitions/Sections"
+                }
+            },
+            "required": [
+                "items"
+            ],
+            "title": "Sections"
+        },
+        "Items": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "string"
+            },
+            "properties": {
+                "config": {
+                    "$ref": "#/definitions/Config"
+                },
+                "meta": {
+                    "$ref": "#/definitions/Meta"
+                },
+                "data": {
+                    "type": "object"
+                }
+            },
+            "required": [
+                "config",
+                "meta"
+            ],
+            "title": "Items"
+        }
+    }
+}
