@@ -6,7 +6,7 @@ import (
 	"crypto/rand"
 	"io"
 
-	"github.com/oleiade/trousseau/crypto"
+	"github.com/oleiade/trousseau/pkg/crypto"
 )
 
 type Encrypter struct {

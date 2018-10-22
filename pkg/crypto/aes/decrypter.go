@@ -5,7 +5,7 @@ import (
 	"crypto/cipher"
 	"errors"
 
-	"github.com/oleiade/trousseau/crypto"
+	"github.com/oleiade/trousseau/pkg/crypto"
 )
 
 type Decrypter struct {
